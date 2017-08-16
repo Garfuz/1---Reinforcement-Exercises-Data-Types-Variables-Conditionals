@@ -1,0 +1,80 @@
+#Exercise 1
+
+documentary = "Top Documentary"
+drama = "Top Drama"
+comedy = "Top comedy"
+dramedy = "Top Dramedy"
+
+
+print "Do you enjoy Documentaries? (Y or N) "
+documentary_answer = gets.chomp.downcase
+
+print "Do you enjoy Dramas? (Y or N) "
+drama_answer = gets.chomp.downcase
+
+print "Do you enjoy Comedies? (Y or N) "
+comedy_answer = gets.chomp.downcase
+
+
+if documentary_answer == "y"
+  puts "Based on your interests, #{documentary} is highly reccomended for you."
+
+
+  if documentary_answer == "n" && drama_answer == "y" && comedy_answer == "y"
+    puts "Based on your interests, #{drama} is highly reccomended for you."
+
+
+    if drama_answer == "y" && comedy_answer == "n" && documentary_answer == "n"
+      puts "Based on your interests, #{comedy} is highly reccomended for you."
+
+
+      if comedy_answer == "y" && drama_answer == "n" && documentary_answer == "n"
+        puts "Based on your interests, #{dramedy} is highly reccomended for you."
+
+          elsif comedy_answer == "n" && drama_answer == "n" && documentary_answer == "n"
+            puts "Based on your interests, I reccomend a good book instead."
+      end
+    end
+  end
+end
+
+
+#Exercise 2
+
+documentary = "Top Documentary"
+drama = "Top Drama"
+comedy = "Top comedy"
+dramedy = "Top Dramedy"
+
+
+puts "Please rate your appreciation of Documentaries on a scale from (1-5) "
+documentary_answer = gets.chomp.to_i
+print "Please rate your appreciation of Dramas on a scale from (1-5) "
+drama_answer = gets.chomp.to_i
+print "Please rate your appreciation of Comedies on a scale from (1-5) "
+comedy_answer = gets.chomp.to_i
+
+
+puts "Documentary Answer is #{documentary_answer}"
+puts "Drama Answer is #{drama_answer}"
+puts "Comedy Answer is #{comedy_answer}"
+
+
+if documentary_answer >= 4
+    puts "Based on your rating, #{documentary} is highly reccomended for you."
+
+
+  elsif drama_answer >= 4 && comedy_answer < 4 && documentary_answer < 4
+    puts "Based on your rating, #{drama} is highly reccomended for you."
+
+
+  elsif documentary_answer <= 3 && comedy_answer >= 4 && drama_answer >= 4
+    puts puts "Based on your rating, #{dramedy} is highly reccomended for you."
+
+
+  elsif comedy_answer >= 4 && drama_answer < 4 && documentary_answer < 4
+    puts "Based on your rating, #{documentary} is highly reccomended for you."
+
+  else
+    puts "Based on your interests, I reccomend a good book instead."
+end
